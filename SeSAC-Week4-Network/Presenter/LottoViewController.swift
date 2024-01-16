@@ -8,19 +8,6 @@
 import UIKit
 import Alamofire
 
-struct Lotto: Codable {
-  let drwNo: Int          // 회차
-  let drwNoDate: String   // 날짜
-  
-  let drwtNo1: Int
-  let drwtNo2: Int
-  let drwtNo3: Int
-  let drwtNo4: Int
-  let drwtNo5: Int
-  let drwtNo6: Int
-  let bnusNo: Int
-}
-
 final class LottoViewController: UIViewController {
   
   @IBOutlet weak var numberTextField: UITextField!
@@ -36,10 +23,10 @@ final class LottoViewController: UIViewController {
   }
   
   private func callRequest(number: Int) {
-    let url: String = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(number)"
+    let url: String = RequestURL.lotto(number).urlStr
     
     AF
-      .request(url, method: .)
+      .request(url)
       .responseDecodable(of: Lotto.self) { [weak self] response in
         guard let self else { return }
         

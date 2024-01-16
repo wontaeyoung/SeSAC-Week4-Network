@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E3CBC4B2B562176007B9FF9 /* Lotto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3CBC4A2B562176007B9FF9 /* Lotto.swift */; };
+		6E3CBC4D2B562180007B9FF9 /* RequestURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3CBC4C2B562180007B9FF9 /* RequestURL.swift */; };
+		6E3CBC512B562195007B9FF9 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3CBC502B562195007B9FF9 /* MarketViewController.swift */; };
+		6E3CBC532B5621C0007B9FF9 /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3CBC522B5621C0007B9FF9 /* Market.swift */; };
 		6EF215632B5611CA0025599F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF215622B5611CA0025599F /* AppDelegate.swift */; };
 		6EF215652B5611CA0025599F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF215642B5611CA0025599F /* SceneDelegate.swift */; };
 		6EF215672B5611CA0025599F /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF215662B5611CA0025599F /* LottoViewController.swift */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E3CBC4A2B562176007B9FF9 /* Lotto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lotto.swift; sourceTree = "<group>"; };
+		6E3CBC4C2B562180007B9FF9 /* RequestURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestURL.swift; sourceTree = "<group>"; };
+		6E3CBC502B562195007B9FF9 /* MarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
+		6E3CBC522B5621C0007B9FF9 /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
 		6EF2155F2B5611CA0025599F /* SeSAC-Week4-Network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeSAC-Week4-Network.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF215622B5611CA0025599F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EF215642B5611CA0025599F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +96,9 @@
 		6EF2157B2B56124C0025599F /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				6E3CBC4A2B562176007B9FF9 /* Lotto.swift */,
+				6E3CBC4C2B562180007B9FF9 /* RequestURL.swift */,
+				6E3CBC522B5621C0007B9FF9 /* Market.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -98,6 +109,7 @@
 				6EF2156D2B5611CC0025599F /* LaunchScreen.storyboard */,
 				6EF215682B5611CA0025599F /* Main.storyboard */,
 				6EF215662B5611CA0025599F /* LottoViewController.swift */,
+				6E3CBC502B562195007B9FF9 /* MarketViewController.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -186,8 +198,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E3CBC4B2B562176007B9FF9 /* Lotto.swift in Sources */,
+				6E3CBC4D2B562180007B9FF9 /* RequestURL.swift in Sources */,
+				6E3CBC532B5621C0007B9FF9 /* Market.swift in Sources */,
 				6EF215672B5611CA0025599F /* LottoViewController.swift in Sources */,
 				6EF215632B5611CA0025599F /* AppDelegate.swift in Sources */,
+				6E3CBC512B562195007B9FF9 /* MarketViewController.swift in Sources */,
 				6EF215652B5611CA0025599F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
