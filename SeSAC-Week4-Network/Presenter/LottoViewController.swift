@@ -1,17 +1,17 @@
 //
-//  ViewController.swift
+//  LottoViewController.swift
 //  SeSAC-Week4-Network
 //
 //  Created by 원태영 on 1/16/24.
 //
 
 import UIKit
+import Alamofire
 
-class ViewController: UIViewController {
+final class LottoViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
   }
 
 
