@@ -66,14 +66,56 @@
                     <view key="view" contentMode="scaleToFill" id="Yku-m1-SOe">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="enl-cw-gVY">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MarketTableViewCell" textLabel="gq5-yb-Y8f" detailTextLabel="LrO-Tq-hhW" style="IBUITableViewCellStyleValue1" id="Fv0-93-h6d">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fv0-93-h6d" id="WVv-KC-Wz5">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gq5-yb-Y8f">
+                                                    <rect key="frame" x="20" y="15" width="25" height="14.333333333333334"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LrO-Tq-hhW">
+                                                    <rect key="frame" x="340.33333333333331" y="15" width="32.666666666666664" height="14.333333333333334"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="23J-Dh-hFj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="23J-Dh-hFj" firstAttribute="bottom" secondItem="enl-cw-gVY" secondAttribute="bottom" id="VuX-R3-Nmk"/>
+                            <constraint firstItem="enl-cw-gVY" firstAttribute="top" secondItem="23J-Dh-hFj" secondAttribute="top" id="Wx4-PH-2yP"/>
+                            <constraint firstItem="23J-Dh-hFj" firstAttribute="trailing" secondItem="enl-cw-gVY" secondAttribute="trailing" id="oUZ-8e-LBD"/>
+                            <constraint firstItem="enl-cw-gVY" firstAttribute="leading" secondItem="23J-Dh-hFj" secondAttribute="leading" id="vGg-6C-g9V"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="0Ca-1B-YoG"/>
+                    <connections>
+                        <outlet property="marketTableView" destination="enl-cw-gVY" id="EfF-MN-1ON"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kKh-t0-kt4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1081" y="646"/>
+            <point key="canvasLocation" x="1077" y="781"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dXI-Hi-0eV">
