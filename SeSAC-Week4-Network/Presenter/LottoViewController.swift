@@ -14,36 +14,14 @@ final class LottoViewController: UIViewController {
   @IBOutlet weak var requestButton: UIButton!
   @IBOutlet weak var dateLabel: UILabel!
   
+  private let manager = LottoAPIManager()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     dateLabel.font = .boldSystemFont(ofSize: 16)
     configureTextField()
     configureButton()
-  }
-  
-  private func callRequest(number: Int) {
-    let url: String = RequestURL.lotto(number).urlStr
-    
-    AF
-      .request(url)
-      .responseDecodable(of: Lotto.self) { [weak self] response in
-        guard let self else { return }
-        
-        switch response.result {
-          case .success(let success):
-            dateLabel.text = success.drwNoDate
-            
-            print(success)
-            print(success.drwNo, "회차")
-            print("날짜:", success.drwNoDate)
-            
-          case .failure(let failure):
-            dateLabel.text = failure.errorDescription
-            
-            print(#function, failure.errorDescription ?? "에러 발생")
-        }
-      }
   }
   
   private func configureTextField() {
@@ -61,7 +39,13 @@ final class LottoViewController: UIViewController {
   
   @objc private func requestButtonTapped(_ sender: UIButton) {
     let number: Int = Int(numberTextField.text!)!
-    callRequest(number: number)
+    
+    manager.callRequest(number: number) { [weak self] text in
+      guard let self else { return }
+      
+      dateLabel.text = text
+    }
+    
     numberTextField.text = nil
   }
 }

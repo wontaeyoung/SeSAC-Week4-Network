@@ -22,6 +22,9 @@ final class MarketViewController: UIViewController {
     super.viewDidLoad()
     
     configureTableView()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
     callRequest()
   }
   
@@ -30,12 +33,19 @@ final class MarketViewController: UIViewController {
     
     AF
       .request(url)
+      .validate(statusCode: 200...500) // 상태 코드에 포함되어있어야 result가 success로 반환됨
       .responseDecodable(of: [Market].self) { [weak self] response in
         guard let self else { return }
         
         switch response.result {
           case .success(let success):
-            markets = success
+            let statusCode = response.response?.statusCode
+            
+            if statusCode == 200 {
+              markets = success
+            } else if statusCode == 500 {
+              print("오류가 발생했어요. 잠시 후 다시 시도해주세요.")
+            }
             
           case .failure(let failure):
             print(#function, failure.errorDescription ?? "에러 발생")
