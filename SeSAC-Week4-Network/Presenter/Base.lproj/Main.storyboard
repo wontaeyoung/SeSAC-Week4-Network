@@ -15,10 +15,45 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BMr-un-YGT">
+                                <rect key="frame" x="16" y="75" width="321" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UyN-fg-OYR">
+                                <rect key="frame" x="16" y="125" width="361" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4P-Dd-vix">
+                                <rect key="frame" x="353" y="75" width="24" height="34"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UyN-fg-OYR" firstAttribute="top" secondItem="BMr-un-YGT" secondAttribute="bottom" constant="16" id="Agc-c6-JN2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M4P-Dd-vix" secondAttribute="trailing" constant="16" id="IJI-mf-4GI"/>
+                            <constraint firstItem="M4P-Dd-vix" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Pli-LJ-WRq"/>
+                            <constraint firstItem="UyN-fg-OYR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TpL-yY-eGW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UyN-fg-OYR" secondAttribute="trailing" constant="16" id="Ucg-PO-Ya2"/>
+                            <constraint firstItem="UyN-fg-OYR" firstAttribute="top" secondItem="M4P-Dd-vix" secondAttribute="bottom" constant="16" id="XL7-qJ-l7F"/>
+                            <constraint firstItem="BMr-un-YGT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qQU-F7-cCG"/>
+                            <constraint firstItem="M4P-Dd-vix" firstAttribute="leading" secondItem="BMr-un-YGT" secondAttribute="trailing" constant="16" id="u5l-8H-9qw"/>
+                            <constraint firstItem="UyN-fg-OYR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="vlH-Ex-cAa"/>
+                            <constraint firstItem="BMr-un-YGT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="zSz-j6-4HJ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="95b-O1-VvP"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="UyN-fg-OYR" id="d2w-nq-Y9G"/>
+                        <outlet property="numberTextField" destination="BMr-un-YGT" id="z4a-Zu-Q0B"/>
+                        <outlet property="requestButton" destination="M4P-Dd-vix" id="A8n-pU-5zN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
