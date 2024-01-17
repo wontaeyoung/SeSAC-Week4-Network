@@ -12,11 +12,17 @@ enum APIError: Error {
 }
 
 struct APIManager {
-  func callRequest<T: Codable>(type: T.Type, requestType: RequestURL, completionHandler: @escaping (T) -> Void) {
+  func callRequest<T: Codable>(
+    type: T.Type,
+    requestType: RequestURL,
+    header: HTTPHeaders,
+    parameter: Parameters,
+    completionHandler: @escaping (T) -> Void
+  ) {
     let url: String = requestType.urlStr
     
     AF
-      .request(url)
+      .request(url, method: .post, parameters: parameter, headers: header)
       .responseDecodable(of: T.self) { response in
         switch response.result {
           case .success(let success):

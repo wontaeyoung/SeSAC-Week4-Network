@@ -40,7 +40,12 @@ final class LottoViewController: UIViewController {
   @objc private func requestButtonTapped(_ sender: UIButton) {
     let number: Int = Int(numberTextField.text!)!
     
-    manager.callRequest(type: Lotto.self, requestType: .lotto(number)) { [weak self] lotto in
+    manager.callRequest(
+      type: Lotto.self,
+      requestType: .lotto(number),
+      header: .default,
+      parameter: [:]
+    ) { [weak self] lotto in
       guard let self else { return }
       
       dateLabel.text = lotto.drwNoDate

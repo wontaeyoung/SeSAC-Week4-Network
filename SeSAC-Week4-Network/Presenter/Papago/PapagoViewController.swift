@@ -27,14 +27,23 @@ final class PapagoViewController: UIViewController {
   @IBOutlet weak var translateButton: UIButton!
   @IBOutlet weak var targetLabel: UILabel!
   
+  private let manager = APIManager()
   private var sourceLang: PapagoLanguage = .korean {
     didSet {
       sourceLangButton.setTitle(sourceLang.displayName, for: .normal)
+      
+      if sourceLang == targetLang {
+        targetLang = oldValue
+      }
     }
   }
   private var targetLang: PapagoLanguage = .english {
     didSet {
       targetLangButton.setTitle(targetLang.displayName, for: .normal)
+      
+      if sourceLang == targetLang {
+        sourceLang = oldValue
+      }
     }
   }
   
@@ -43,10 +52,37 @@ final class PapagoViewController: UIViewController {
     
     translateButton.addTarget(self, action: #selector(translateButtonTapped), for: .touchUpInside)
     swapLangButton.addTarget(self, action: #selector(swapLanguage), for: .touchUpInside)
+    sourceLangButton.addTarget(self, action: #selector(sourceLangButtonTapped), for: .touchUpInside)
+    targetLangButton.addTarget(self, action: #selector(targetLangButtonTapped), for: .touchUpInside)
   }
   
   @objc private func translateButtonTapped(_ sender: UIButton) {
     callRequest()
+  }
+}
+
+// MARK: - Navigation
+extension PapagoViewController {
+  @objc private func sourceLangButtonTapped() {
+    push(currentLanguage: sourceLang) { language in
+      self.sourceLang = language
+    }
+  }
+  
+  @objc private func targetLangButtonTapped() {
+    push(currentLanguage: targetLang) { language in
+      self.targetLang = language
+    }
+  }
+  
+  private func push(currentLanguage: PapagoLanguage, action: @escaping (PapagoLanguage) -> Void) {
+    let identifier = String(describing: LanguageViewController.self)
+    let controller: LanguageViewController = storyboard?.instantiateViewController(withIdentifier: identifier) as! LanguageViewController
+    
+    controller.currentLanguage = currentLanguage
+    controller.submitLanguageAction = action
+    
+    navigationController?.pushViewController(controller, animated: true)
   }
 }
 
@@ -59,8 +95,6 @@ extension PapagoViewController {
   }
   
   private func callRequest() {
-    let url: String = RequestURL.papago.urlStr
-    
     let parameters: Parameters = [
       "text": sourceTextView.text!,
       "source": sourceLang.languageCode,
@@ -72,20 +106,16 @@ extension PapagoViewController {
       "X-Naver-Client-Secret": APIKey.Naver.cliendSecret
     ]
     
-    AF
-      .request(url, method: .post, parameters: parameters, headers: headers)
-      .responseDecodable(of: Papago.self) { [weak self] response in
-        guard let self else { return }
-        
-        switch response.result {
-          case .success(let data):
-            targetLabel.text = data.message.result.translatedText
-            dump(data)
-            
-          case .failure(let failure):
-            print(failure.localizedDescription)
-        }
-      }
+    manager.callRequest(
+      type: Papago.self,
+      requestType: .papago,
+      header: headers,
+      parameter: parameters)
+    { [weak self] papago in
+      guard let self else { return }
+      
+      targetLabel.text = papago.message.result.translatedText
+    }
   }
 }
 
