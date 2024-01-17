@@ -7,13 +7,22 @@
 
 import Foundation
 
-// MARK: - Book
-struct Book: Codable {
+// MARK: -
+struct Book {
+  let title: String
+  let image: String
+  
+  var url: URL? {
+    return URL(string: image)
+  }
+}
+
+// MARK: - API Model
+struct BookRequest: Codable {
   let documents: [Document]
   let meta: Meta
 }
 
-// MARK: - Document
 struct Document: Codable {
   let authors: [String]
   let contents: String
@@ -30,9 +39,12 @@ struct Document: Codable {
     case salePrice = "sale_price"
     case thumbnail, title, url
   }
+  
+  var asBook: Book {
+    return Book(title: title, image: thumbnail)
+  }
 }
 
-// MARK: - Meta
 struct Meta: Codable {
   let isEnd: Bool
   let pageableCount, totalCount: Int
