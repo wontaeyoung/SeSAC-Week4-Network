@@ -57,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1005" y="-668"/>
+            <point key="canvasLocation" x="131" y="-837"/>
         </scene>
         <!--Item-->
         <scene sceneID="Qvd-l2-IZk">
@@ -115,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kKh-t0-kt4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1004" y="5"/>
+            <point key="canvasLocation" x="943" y="-837"/>
         </scene>
         <!--Item-->
         <scene sceneID="izR-gh-Def">
@@ -174,7 +174,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nGb-0N-d2q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1010" y="679"/>
+            <point key="canvasLocation" x="943" y="-35"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="vCE-hi-gYi">
+            <objects>
+                <viewController id="5Qw-b6-Z6U" customClass="BookViewController" customModule="SeSAC_Week4_Network" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8HY-Fh-zNT">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="pt5-Vo-6vk">
+                                <rect key="frame" x="16" y="75" width="361" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="5Qw-b6-Z6U" id="6JY-cm-VCL"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Pde-z1-xIg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pt5-Vo-6vk" firstAttribute="top" secondItem="Pde-z1-xIg" secondAttribute="top" constant="16" id="BeN-bM-l5d"/>
+                            <constraint firstItem="Pde-z1-xIg" firstAttribute="trailing" secondItem="pt5-Vo-6vk" secondAttribute="trailing" constant="16" id="f4G-ul-fW6"/>
+                            <constraint firstItem="pt5-Vo-6vk" firstAttribute="leading" secondItem="Pde-z1-xIg" secondAttribute="leading" constant="16" id="npV-OZ-doF"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="XNU-Kq-Oo9"/>
+                    <connections>
+                        <outlet property="searchBar" destination="pt5-Vo-6vk" id="HDu-lF-WE4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="di1-lm-VQx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="930.53435114503816" y="644.36619718309862"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dXI-Hi-0eV">
@@ -190,6 +223,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="mlR-ln-dvm"/>
                         <segue destination="M4F-vZ-pGy" kind="relationship" relationship="viewControllers" id="egN-X4-vM2"/>
                         <segue destination="BVr-oV-bXj" kind="relationship" relationship="viewControllers" id="lBA-n9-cfq"/>
+                        <segue destination="5Qw-b6-Z6U" kind="relationship" relationship="viewControllers" id="glO-UN-tli"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DvS-n9-wYT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
