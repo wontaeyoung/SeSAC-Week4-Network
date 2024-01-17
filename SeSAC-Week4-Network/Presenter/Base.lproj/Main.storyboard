@@ -126,13 +126,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="번역된 문장" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2E-n1-sOd">
-                                <rect key="frame" x="20" y="459" width="353" height="20.333333333333314"/>
+                                <rect key="frame" x="20" y="509.99999999999994" width="353" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xa-cK-j3G">
-                                <rect key="frame" x="20" y="399" width="353" height="40"/>
+                                <rect key="frame" x="20" y="450" width="353" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="i4i-sP-f11"/>
                                 </constraints>
@@ -140,7 +140,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="번역하기"/>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="el2-Ok-gbu">
-                                <rect key="frame" x="20" y="79" width="353" height="300"/>
+                                <rect key="frame" x="20" y="130" width="353" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="t1R-jO-ArT"/>
@@ -149,26 +149,50 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEp-PS-0oH">
+                                <rect key="frame" x="172" y="75" width="49" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.right.arrow.left.square.fill" catalog="system" title=""/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Idr-jh-q61">
+                                <rect key="frame" x="323" y="75" width="54" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="영어"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4LM-Rg-3SC">
+                                <rect key="frame" x="16" y="75" width="69" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="한국어"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wL3-Jk-VBo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wL3-Jk-VBo" firstAttribute="trailing" secondItem="el2-Ok-gbu" secondAttribute="trailing" constant="20" id="1GA-7v-taN"/>
                             <constraint firstItem="L2E-n1-sOd" firstAttribute="top" secondItem="2xa-cK-j3G" secondAttribute="bottom" constant="20" id="1eE-VH-jPk"/>
-                            <constraint firstItem="el2-Ok-gbu" firstAttribute="top" secondItem="wL3-Jk-VBo" secondAttribute="top" constant="20" id="3ZB-mG-nMW"/>
+                            <constraint firstItem="Idr-jh-q61" firstAttribute="top" secondItem="wL3-Jk-VBo" secondAttribute="top" constant="16" id="3nt-im-Dc5"/>
+                            <constraint firstItem="el2-Ok-gbu" firstAttribute="top" secondItem="4LM-Rg-3SC" secondAttribute="bottom" constant="20" id="Jh2-pd-f8e"/>
                             <constraint firstItem="wL3-Jk-VBo" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="L2E-n1-sOd" secondAttribute="bottom" constant="20" id="RFA-nq-rxw"/>
                             <constraint firstItem="2xa-cK-j3G" firstAttribute="top" secondItem="el2-Ok-gbu" secondAttribute="bottom" constant="20" id="Sgx-7U-iEM"/>
+                            <constraint firstItem="4LM-Rg-3SC" firstAttribute="leading" secondItem="wL3-Jk-VBo" secondAttribute="leading" constant="16" id="d9I-eu-V2b"/>
                             <constraint firstItem="2xa-cK-j3G" firstAttribute="leading" secondItem="wL3-Jk-VBo" secondAttribute="leading" constant="20" id="fNu-ac-bCY"/>
+                            <constraint firstItem="4LM-Rg-3SC" firstAttribute="top" secondItem="wL3-Jk-VBo" secondAttribute="top" constant="16" id="h8R-7L-y1Z"/>
+                            <constraint firstItem="wL3-Jk-VBo" firstAttribute="trailing" secondItem="Idr-jh-q61" secondAttribute="trailing" constant="16" id="hJJ-6Y-77f"/>
+                            <constraint firstItem="HEp-PS-0oH" firstAttribute="top" secondItem="wL3-Jk-VBo" secondAttribute="top" constant="16" id="hk6-9z-ocF"/>
                             <constraint firstItem="wL3-Jk-VBo" firstAttribute="trailing" secondItem="L2E-n1-sOd" secondAttribute="trailing" constant="20" id="qJ2-3k-2KV"/>
                             <constraint firstItem="el2-Ok-gbu" firstAttribute="leading" secondItem="wL3-Jk-VBo" secondAttribute="leading" constant="20" id="w6u-mJ-eTx"/>
                             <constraint firstItem="wL3-Jk-VBo" firstAttribute="trailing" secondItem="2xa-cK-j3G" secondAttribute="trailing" constant="20" id="xpC-bo-BcT"/>
                             <constraint firstItem="L2E-n1-sOd" firstAttribute="leading" secondItem="wL3-Jk-VBo" secondAttribute="leading" constant="20" id="ySr-cf-Tr1"/>
+                            <constraint firstItem="HEp-PS-0oH" firstAttribute="centerX" secondItem="EgG-6R-3AG" secondAttribute="centerX" id="zwZ-QF-CYv"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="arP-Tv-WzE"/>
                     <connections>
+                        <outlet property="sourceLangButton" destination="4LM-Rg-3SC" id="fGn-7x-RGI"/>
                         <outlet property="sourceTextView" destination="el2-Ok-gbu" id="HL7-cZ-Q8T"/>
+                        <outlet property="swapLangButton" destination="HEp-PS-0oH" id="tHQ-tq-J6Q"/>
                         <outlet property="targetLabel" destination="L2E-n1-sOd" id="wCc-1g-o9A"/>
+                        <outlet property="targetLangButton" destination="Idr-jh-q61" id="scV-l8-NEg"/>
                         <outlet property="translateButton" destination="2xa-cK-j3G" id="2KC-xQ-GbB"/>
                     </connections>
                 </viewController>
@@ -232,6 +256,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.right.arrow.left.square.fill" catalog="system" width="128" height="114"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

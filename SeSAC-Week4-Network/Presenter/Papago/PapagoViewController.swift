@@ -19,6 +19,10 @@ import Alamofire
 
 final class PapagoViewController: UIViewController {
   
+  @IBOutlet weak var sourceLangButton: UIButton!
+  @IBOutlet weak var swapLangButton: UIButton!
+  @IBOutlet weak var targetLangButton: UIButton!
+  
   @IBOutlet weak var sourceTextView: UITextView!
   @IBOutlet weak var translateButton: UIButton!
   @IBOutlet weak var targetLabel: UILabel!
@@ -30,7 +34,7 @@ final class PapagoViewController: UIViewController {
   }
   
   @objc private func translateButtonTapped(_ sender: UIButton) {
-    let url = "https://openapi.naver.com/v1/papago/n2mt"
+    let url: String = RequestURL.papago.urlStr
     
     let parameters: Parameters = [
       "text": sourceTextView.text!,

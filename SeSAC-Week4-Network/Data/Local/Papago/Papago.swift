@@ -19,4 +19,3 @@ struct Message: Codable {
 struct Result: Codable {
   let translatedText: String
 }
-

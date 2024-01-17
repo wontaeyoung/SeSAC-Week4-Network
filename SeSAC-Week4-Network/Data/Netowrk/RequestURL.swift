@@ -8,6 +8,8 @@
 enum RequestURL {
   case lotto(Int)
   case upbit
+  case papago
+  case book
   
   var urlStr: String {
     switch self {
@@ -16,6 +18,12 @@ enum RequestURL {
       
       case .upbit:
         return "https://api.upbit.com/v1/market/all"
+        
+      case .papago:
+        return "https://openapi.naver.com/v1/papago/n2mt"
+        
+      case .book:
+        return "https://dapi.kakao.com/v3/search/book"
     }
   }
 }

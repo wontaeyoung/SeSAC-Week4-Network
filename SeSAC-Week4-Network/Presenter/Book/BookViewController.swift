@@ -20,7 +20,7 @@ final class BookViewController: UIViewController {
     // Kakao는 한글 쿼리에 대해 내부적으로 인코딩을 해주지만 Naver 검색은 직접 해주어야 함
     // addingPercentEncoding 메서드로 텍스트를 인코딩할 수 있음
     let query = searchBar.text!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-    let url = "https://dapi.kakao.com/v3/search/book"
+    let url: String = RequestURL.book.urlStr
     
     let parameters: Parameters = [
       "target": "title",

@@ -19,6 +19,7 @@
 		6E3CBCF22B576D0A007B9FF9 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3CBCF12B576D0A007B9FF9 /* APIKey.swift */; };
 		6E3CBCF62B576FF5007B9FF9 /* Papago.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3CBCF52B576FF5007B9FF9 /* Papago.swift */; };
 		6E3CBCF82B577A9A007B9FF9 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3CBCF72B577A9A007B9FF9 /* Book.swift */; };
+		6E8085982B57A5B3007D6CEC /* PapagoLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8085972B57A5B3007D6CEC /* PapagoLanguage.swift */; };
 		6EF215632B5611CA0025599F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF215622B5611CA0025599F /* AppDelegate.swift */; };
 		6EF215652B5611CA0025599F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF215642B5611CA0025599F /* SceneDelegate.swift */; };
 		6EF215672B5611CA0025599F /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF215662B5611CA0025599F /* LottoViewController.swift */; };
@@ -41,6 +42,7 @@
 		6E3CBCF12B576D0A007B9FF9 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		6E3CBCF52B576FF5007B9FF9 /* Papago.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Papago.swift; sourceTree = "<group>"; };
 		6E3CBCF72B577A9A007B9FF9 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		6E8085972B57A5B3007D6CEC /* PapagoLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapagoLanguage.swift; sourceTree = "<group>"; };
 		6EF2155F2B5611CA0025599F /* SeSAC-Week4-Network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeSAC-Week4-Network.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF215622B5611CA0025599F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EF215642B5611CA0025599F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,59 @@
 			children = (
 			);
 			path = ExceptTest;
+			sourceTree = "<group>";
+		};
+		6E8085912B57A321007D6CEC /* Papago */ = {
+			isa = PBXGroup;
+			children = (
+				6E3CBCF52B576FF5007B9FF9 /* Papago.swift */,
+				6E8085972B57A5B3007D6CEC /* PapagoLanguage.swift */,
+			);
+			path = Papago;
+			sourceTree = "<group>";
+		};
+		6E8085922B57A324007D6CEC /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				6E3CBCF72B577A9A007B9FF9 /* Book.swift */,
+			);
+			path = Book;
+			sourceTree = "<group>";
+		};
+		6E8085932B57A395007D6CEC /* Netowrk */ = {
+			isa = PBXGroup;
+			children = (
+				6E3CBC4C2B562180007B9FF9 /* RequestURL.swift */,
+			);
+			path = Netowrk;
+			sourceTree = "<group>";
+		};
+		6E8085942B57A39E007D6CEC /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				6E8085922B57A324007D6CEC /* Book */,
+				6E8085912B57A321007D6CEC /* Papago */,
+				6E3CBC4A2B562176007B9FF9 /* Lotto.swift */,
+				6E3CBC522B5621C0007B9FF9 /* Market.swift */,
+				6E3CBC542B562567007B9FF9 /* BoxOffice.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		6E8085952B57A3B3007D6CEC /* Papago */ = {
+			isa = PBXGroup;
+			children = (
+				6E3CBCE92B576737007B9FF9 /* PapagoViewController.swift */,
+			);
+			path = Papago;
+			sourceTree = "<group>";
+		};
+		6E8085962B57A3B5007D6CEC /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				6E3CBCEB2B576AF2007B9FF9 /* BookViewController.swift */,
+			);
+			path = Book;
 			sourceTree = "<group>";
 		};
 		6EF215562B5611CA0025599F = {
@@ -122,12 +177,8 @@
 		6EF2157B2B56124C0025599F /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				6E3CBC4A2B562176007B9FF9 /* Lotto.swift */,
-				6E3CBC4C2B562180007B9FF9 /* RequestURL.swift */,
-				6E3CBC522B5621C0007B9FF9 /* Market.swift */,
-				6E3CBC542B562567007B9FF9 /* BoxOffice.swift */,
-				6E3CBCF52B576FF5007B9FF9 /* Papago.swift */,
-				6E3CBCF72B577A9A007B9FF9 /* Book.swift */,
+				6E8085942B57A39E007D6CEC /* Local */,
+				6E8085932B57A395007D6CEC /* Netowrk */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -135,12 +186,12 @@
 		6EF2157C2B56124F0025599F /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				6E8085952B57A3B3007D6CEC /* Papago */,
+				6E8085962B57A3B5007D6CEC /* Book */,
 				6EF2156D2B5611CC0025599F /* LaunchScreen.storyboard */,
 				6EF215682B5611CA0025599F /* Main.storyboard */,
 				6EF215662B5611CA0025599F /* LottoViewController.swift */,
 				6E3CBC502B562195007B9FF9 /* MarketViewController.swift */,
-				6E3CBCE92B576737007B9FF9 /* PapagoViewController.swift */,
-				6E3CBCEB2B576AF2007B9FF9 /* BookViewController.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -245,6 +296,7 @@
 				6E3CBCF62B576FF5007B9FF9 /* Papago.swift in Sources */,
 				6E3CBCF22B576D0A007B9FF9 /* APIKey.swift in Sources */,
 				6E3CBC5C2B565779007B9FF9 /* LottoAPIManager.swift in Sources */,
+				6E8085982B57A5B3007D6CEC /* PapagoLanguage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
