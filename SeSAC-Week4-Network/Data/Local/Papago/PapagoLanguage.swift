@@ -5,7 +5,7 @@
 //  Created by 원태영 on 1/17/24.
 //
 
-enum PapagoLanguage: String {
+enum PapagoLanguage: String, CaseIterable {
   case korean = "한국어"
   case english = "영어"
   case japanese = "일본어"
@@ -24,6 +24,14 @@ enum PapagoLanguage: String {
   
   var displayName: String {
     return self.rawValue
+  }
+  
+  var displayNameList: [String] {
+    return Self.allCases.map { $0.displayName }
+  }
+  
+  var languageCode: String {
+    return Self.papagoLanguages[self.displayName]!
   }
 }
 

@@ -27,19 +27,44 @@ final class PapagoViewController: UIViewController {
   @IBOutlet weak var translateButton: UIButton!
   @IBOutlet weak var targetLabel: UILabel!
   
+  private var sourceLang: PapagoLanguage = .korean {
+    didSet {
+      sourceLangButton.setTitle(sourceLang.displayName, for: .normal)
+    }
+  }
+  private var targetLang: PapagoLanguage = .english {
+    didSet {
+      targetLangButton.setTitle(targetLang.displayName, for: .normal)
+    }
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     translateButton.addTarget(self, action: #selector(translateButtonTapped), for: .touchUpInside)
+    swapLangButton.addTarget(self, action: #selector(swapLanguage), for: .touchUpInside)
   }
   
   @objc private func translateButtonTapped(_ sender: UIButton) {
+    callRequest()
+  }
+}
+
+// MARK: - Action
+extension PapagoViewController {
+  @objc private func swapLanguage() {
+    let temp: PapagoLanguage = sourceLang
+    sourceLang = targetLang
+    targetLang = temp
+  }
+  
+  private func callRequest() {
     let url: String = RequestURL.papago.urlStr
     
     let parameters: Parameters = [
       "text": sourceTextView.text!,
-      "source": "ko",
-      "target": "en"
+      "source": sourceLang.languageCode,
+      "target": targetLang.languageCode
     ]
     
     let headers: HTTPHeaders = [
@@ -61,5 +86,17 @@ final class PapagoViewController: UIViewController {
             print(failure.localizedDescription)
         }
       }
+  }
+}
+
+// MARK: - Configure
+extension PapagoViewController {
+  private func configureUI() {
+    configureButton()
+  }
+  
+  private func configureButton() {
+    sourceLangButton.setTitle(sourceLang.displayName, for: .normal)
+    targetLangButton.setTitle(targetLang.displayName, for: .normal)
   }
 }
