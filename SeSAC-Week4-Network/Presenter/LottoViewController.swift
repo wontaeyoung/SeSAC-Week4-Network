@@ -14,7 +14,7 @@ final class LottoViewController: UIViewController {
   @IBOutlet weak var requestButton: UIButton!
   @IBOutlet weak var dateLabel: UILabel!
   
-  private let manager = LottoAPIManager()
+  private let manager = APIManager()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -40,10 +40,10 @@ final class LottoViewController: UIViewController {
   @objc private func requestButtonTapped(_ sender: UIButton) {
     let number: Int = Int(numberTextField.text!)!
     
-    manager.callRequest(number: number) { [weak self] text in
+    manager.callRequest(type: Lotto.self, requestType: .lotto(number)) { [weak self] lotto in
       guard let self else { return }
       
-      dateLabel.text = text
+      dateLabel.text = lotto.drwNoDate
     }
     
     numberTextField.text = nil

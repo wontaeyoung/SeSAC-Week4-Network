@@ -1,5 +1,5 @@
 //
-//  LottoAPIManager.swift
+//  APIManager.swift
 //  SeSAC-Week4-Network
 //
 //  Created by 원태영 on 1/16/24.
@@ -7,20 +7,20 @@
 
 import Alamofire
 
-enum LottoError: Error {
+enum APIError: Error {
   case requestFailed
 }
 
-struct LottoAPIManager {
-  func callRequest(number: Int, completionHandler: @escaping (String) -> Void) {
-    let url: String = RequestURL.lotto(number).urlStr
+struct APIManager {
+  func callRequest<T: Codable>(type: T.Type, requestType: RequestURL, completionHandler: @escaping (T) -> Void) {
+    let url: String = requestType.urlStr
     
     AF
       .request(url)
-      .responseDecodable(of: Lotto.self) { response in
+      .responseDecodable(of: T.self) { response in
         switch response.result {
           case .success(let success):
-            completionHandler(success.drwNoDate)
+            completionHandler(success)
             
           case .failure(let failure):
             print(failure.localizedDescription)
