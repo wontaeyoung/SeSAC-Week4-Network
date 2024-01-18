@@ -35,13 +35,10 @@ struct UserDefault<T> where T: RawRepresentable, T.RawValue: Any {
         return defaultValue
       }
       
-      print(#function + "불러오기 \(key.name) : \(rawValue)")
-      
       return value
     }
     set {
       UserDefaults.standard.set(newValue.rawValue, forKey: key.name)
-      print(#function + "저장하기 \(key.name) : \(newValue.rawValue)")
     }
   }
 }
