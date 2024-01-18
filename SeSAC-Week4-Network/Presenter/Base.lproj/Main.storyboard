@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Lotto-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LottoViewController" customModule="SeSAC_Week4_Network" customModuleProvider="target" sceneMemberID="viewController">
@@ -48,7 +48,7 @@
                             <constraint firstItem="BMr-un-YGT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="zSz-j6-4HJ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="95b-O1-VvP"/>
+                    <tabBarItem key="tabBarItem" title="Lotto" image="32.circle.fill" catalog="system" id="95b-O1-VvP"/>
                     <connections>
                         <outlet property="dateLabel" destination="UyN-fg-OYR" id="d2w-nq-Y9G"/>
                         <outlet property="numberTextField" destination="BMr-un-YGT" id="z4a-Zu-Q0B"/>
@@ -59,7 +59,7 @@
             </objects>
             <point key="canvasLocation" x="-3069" y="618"/>
         </scene>
-        <!--Item-->
+        <!--Coin-->
         <scene sceneID="Qvd-l2-IZk">
             <objects>
                 <viewController id="M4F-vZ-pGy" customClass="MarketViewController" customModule="SeSAC_Week4_Network" customModuleProvider="target" sceneMemberID="viewController">
@@ -108,7 +108,7 @@
                             <constraint firstItem="enl-cw-gVY" firstAttribute="leading" secondItem="23J-Dh-hFj" secondAttribute="leading" id="vGg-6C-g9V"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="0Ca-1B-YoG"/>
+                    <tabBarItem key="tabBarItem" title="Coin" image="bitcoinsign.circle.fill" catalog="system" id="0Ca-1B-YoG"/>
                     <connections>
                         <outlet property="marketTableView" destination="enl-cw-gVY" id="EfF-MN-1ON"/>
                     </connections>
@@ -210,7 +210,7 @@
             </objects>
             <point key="canvasLocation" x="692.36641221374043" y="617.6056338028169"/>
         </scene>
-        <!--Item-->
+        <!--SearchBook-->
         <scene sceneID="vCE-hi-gYi">
             <objects>
                 <viewController id="5Qw-b6-Z6U" customClass="BookViewController" customModule="SeSAC_Week4_Network" customModuleProvider="target" sceneMemberID="viewController">
@@ -249,7 +249,7 @@
                             <constraint firstItem="pt5-Vo-6vk" firstAttribute="leading" secondItem="Pde-z1-xIg" secondAttribute="leading" constant="16" id="npV-OZ-doF"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="XNU-Kq-Oo9"/>
+                    <tabBarItem key="tabBarItem" title="SearchBook" image="doc.text.magnifyingglass" catalog="system" id="XNU-Kq-Oo9"/>
                     <connections>
                         <outlet property="collectionView" destination="W93-t5-x8X" id="e4b-C7-3DY"/>
                         <outlet property="searchBar" destination="pt5-Vo-6vk" id="HDu-lF-WE4"/>
@@ -270,10 +270,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="mlR-ln-dvm"/>
-                        <segue destination="M4F-vZ-pGy" kind="relationship" relationship="viewControllers" id="egN-X4-vM2"/>
                         <segue destination="zFV-zq-DRI" kind="relationship" relationship="viewControllers" id="lBA-n9-cfq"/>
                         <segue destination="5Qw-b6-Z6U" kind="relationship" relationship="viewControllers" id="glO-UN-tli"/>
+                        <segue destination="M4F-vZ-pGy" kind="relationship" relationship="viewControllers" id="egN-X4-vM2"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="mlR-ln-dvm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DvS-n9-wYT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -329,11 +329,11 @@
             </objects>
             <point key="canvasLocation" x="692" y="1331"/>
         </scene>
-        <!--Item-->
+        <!--Papago-->
         <scene sceneID="bqo-VJ-Lhc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zFV-zq-DRI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="arP-Tv-WzE"/>
+                    <tabBarItem key="tabBarItem" title="Papago" image="bird.circle.fill" catalog="system" id="arP-Tv-WzE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IuU-Lq-UF7">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -350,7 +350,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="32.circle.fill" catalog="system" width="128" height="123"/>
         <image name="arrow.left.arrow.right.square.fill" catalog="system" width="128" height="114"/>
+        <image name="bird.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="bitcoinsign.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="doc.text.magnifyingglass" catalog="system" width="110" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
