@@ -156,7 +156,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEp-PS-0oH">
                                 <rect key="frame" x="172" y="119" width="49" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="arrow.right.arrow.left.square.fill" catalog="system" title="">
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.left.arrow.right.square.fill" catalog="system" title="">
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                             </button>
@@ -350,7 +350,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.right.arrow.left.square.fill" catalog="system" width="128" height="114"/>
+        <image name="arrow.left.arrow.right.square.fill" catalog="system" width="128" height="114"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

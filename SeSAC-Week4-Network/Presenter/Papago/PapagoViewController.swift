@@ -79,6 +79,7 @@ extension PapagoViewController {
     let identifier = String(describing: LanguageViewController.self)
     let controller: LanguageViewController = storyboard?.instantiateViewController(withIdentifier: identifier) as! LanguageViewController
     
+    controller.navigationItem.title = currentLanguage == sourceLang ? "원본 언어 선택" : "목적 언어 선택"
     controller.currentLanguage = currentLanguage
     controller.submitLanguageAction = action
     
