@@ -7,6 +7,47 @@
 
 import Foundation
 
+final class UserDefaultManager {
+  static let shared = UserDefaultManager()
+  
+  enum UDKey: String {
+    case source
+    case target
+    
+    var defaultValue: String {
+      switch self {
+        case .source:
+          return PapagoLanguage.korean.displayName
+          
+        case .target:
+          return PapagoLanguage.english.displayName
+      }
+    }
+  }
+  
+  private let ud = UserDefaults.standard
+  
+  var source: String {
+    get {
+      let key: UDKey = .source
+      return ud.string(forKey: key.rawValue) ?? key.defaultValue
+    }
+    set {
+      ud.setValue(newValue, forKey: UDKey.source.rawValue)
+    }
+  }
+  
+  var target: String {
+    get {
+      let key: UDKey = .target
+      return ud.string(forKey: key.rawValue) ?? key.defaultValue
+    }
+    set {
+      ud.setValue(newValue, forKey: UDKey.target.rawValue)
+    }
+  }
+}
+
 enum Key: String, CaseIterable {
   case source
   case target
