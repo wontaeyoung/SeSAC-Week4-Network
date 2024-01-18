@@ -20,6 +20,9 @@ final class BookViewController: UIViewController {
     }
   }
   
+  private var isEnd: Bool = false
+  private var page: Int = 1
+  
   private let cellCount: Int = 2
   private let cellSpacing: CGFloat = 16
   private var cellWidth: CGFloat {
@@ -44,7 +47,8 @@ final class BookViewController: UIViewController {
     let parameters: Parameters = [
       "target": "title",
       "query": query,
-      "size": 30
+      "size": 50,
+      "page": page
     ]
     
     let headers: HTTPHeaders = ["Authorization": APIKey.Kakao.authorization]
@@ -57,13 +61,38 @@ final class BookViewController: UIViewController {
     { [weak self] result in
       guard let self else { return }
       
-      books = result.documents.map { $0.asBook }
+      dump(result.meta)
+      
+      let newBooks: [Book] = result.documents.map { $0.asBook }
+      books.append(contentsOf: newBooks)
+      self.isEnd = result.meta.isEnd
     }
   }
 }
 
 // MARK: - CollectionView
-extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDataSourcePrefetching {
+  /// UICollectionViewDataSourcePrefetching: iOS 10+
+  /// 셀이 화면에 보이기 직전에 필요한 리소스를 다운로드하는 기능
+  /// 필요한 시점은 애플이 내부적으로 알아서 결정함
+  func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+    guard !isEnd else { return }
+    
+    print("Prefetch \(indexPaths)")
+    
+    indexPaths
+      .forEach { path in
+        if path.row + 1 == books.count {
+          page += 1
+          callRequest()
+        }
+      }
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+    print("Cancel \(indexPaths)")
+  }
+  
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return books.count
   }
@@ -90,6 +119,7 @@ extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSour
     collectionView.collectionViewLayout = layout
     collectionView.delegate = self
     collectionView.dataSource = self
+    collectionView.prefetchDataSource = self
   }
   
   private func register() {
@@ -108,7 +138,18 @@ extension BookViewController: UISearchBarDelegate {
     searchBar.searchBarStyle = .minimal
   }
   
+  private func resetRequestInfo() {
+    // 스크롤 위치를 시작 지점으로 이동
+    // scrollsToTop은 animation을 조절할 수 없어서 스크롤 애니메이션이 사용자에게 보여짐
+    // scrollsToRow는 animation 관리는 가능하지만 TableView에서만 가능함
+    self.collectionView.contentOffset = .zero
+    self.books.removeAll() // 기존 데이터 삭제
+    self.page = 1 // 페이지 번호 초기화
+    self.isEnd = false // 마지막 데이터 조회 여부 초기화
+  }
+  
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    resetRequestInfo()
     callRequest()
   }
 }
