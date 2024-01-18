@@ -28,36 +28,51 @@ final class PapagoViewController: UIViewController {
   @IBOutlet weak var targetLabel: UILabel!
   
   private let manager = APIManager()
-  private var sourceLang: PapagoLanguage = .korean {
+  private var isSameLanguage: Bool {
+    return sourceLang == targetLang
+  }
+  
+  @UserDefault(key: .source, defaultValue: PapagoLanguage.korean)
+  private var sourceLang: PapagoLanguage {
     didSet {
-      sourceLangButton.setTitle(sourceLang.displayName, for: .normal)
-      
-      if sourceLang == targetLang {
-        targetLang = oldValue
-      }
+      if isSameLanguage { targetLang = oldValue }
     }
   }
-  private var targetLang: PapagoLanguage = .english {
+  
+  @UserDefault(key: .target, defaultValue: PapagoLanguage.english)
+  private var targetLang: PapagoLanguage {
     didSet {
-      targetLangButton.setTitle(targetLang.displayName, for: .normal)
-      
-      if sourceLang == targetLang {
-        sourceLang = oldValue
-      }
+      if isSameLanguage { sourceLang = oldValue }
     }
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    configureUI()
+    addTargets()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    sourceLangButton.setTitle(sourceLang.displayName, for: .normal)
+    targetLangButton.setTitle(targetLang.displayName, for: .normal)
+  }
+  
+  @objc private func translateButtonTapped(_ sender: UIButton) {
+    callRequest()
+  }
+  
+  private func addTargets() {
     translateButton.addTarget(self, action: #selector(translateButtonTapped), for: .touchUpInside)
     swapLangButton.addTarget(self, action: #selector(swapLanguage), for: .touchUpInside)
     sourceLangButton.addTarget(self, action: #selector(sourceLangButtonTapped), for: .touchUpInside)
     targetLangButton.addTarget(self, action: #selector(targetLangButtonTapped), for: .touchUpInside)
   }
   
-  @objc private func translateButtonTapped(_ sender: UIButton) {
-    callRequest()
+  private func isSource(_ lang: PapagoLanguage) -> Bool {
+    return lang == sourceLang
   }
 }
 
@@ -79,8 +94,8 @@ extension PapagoViewController {
     let identifier = String(describing: LanguageViewController.self)
     let controller: LanguageViewController = storyboard?.instantiateViewController(withIdentifier: identifier) as! LanguageViewController
     
-    controller.navigationItem.title = currentLanguage == sourceLang ? "원본 언어 선택" : "목적 언어 선택"
-    controller.currentLanguage = currentLanguage
+    controller.navigationItem.title = isSource(currentLanguage) ? "원본 언어 선택" : "목적 언어 선택"
+    controller.currentLanguage = isSource(currentLanguage) ? sourceLang : targetLang
     controller.submitLanguageAction = action
     
     navigationController?.pushViewController(controller, animated: true)
