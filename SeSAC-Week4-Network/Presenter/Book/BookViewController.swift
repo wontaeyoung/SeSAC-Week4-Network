@@ -37,6 +37,31 @@ final class BookViewController: UIViewController {
     register()
     configureSearchBar()
     configureCollectionView()
+    
+    let button = UIBarButtonItem(
+      title: "처음부터 시작하기", 
+      style: .plain,
+      target: self, 
+      action: #selector(restartButtonTapped)
+    )
+    
+    navigationItem.rightBarButtonItem = button
+  }
+  
+  @objc private func restartButtonTapped(_ sender: UIButton) {
+    // 화면 전환이 아니라, 아예 처음처럼. 앱이 처음 실행한 것처럼 만들자
+    /// sceneDelegate Window RootView
+    // UIApplication 싱글톤 인스턴스의 Scene 목록에서 첫 번째를 가져오기
+    print("Scene 갯수", UIApplication.shared.connectedScenes.count)
+    let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+    let sceneDelegate = windowScene?.delegate as? SceneDelegate
+    
+    let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+    let controller = storyboard.instantiateViewController(withIdentifier: OnboardingViewController.identifier)
+    let rootViewController = UINavigationController(rootViewController: controller)
+    
+    sceneDelegate?.window?.rootViewController = rootViewController
+    sceneDelegate?.window?.makeKeyAndVisible()
   }
   
   private func callRequest() {

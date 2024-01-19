@@ -210,7 +210,7 @@
             </objects>
             <point key="canvasLocation" x="692.36641221374043" y="617.6056338028169"/>
         </scene>
-        <!--SearchBook-->
+        <!--Book View Controller-->
         <scene sceneID="vCE-hi-gYi">
             <objects>
                 <viewController id="5Qw-b6-Z6U" customClass="BookViewController" customModule="SeSAC_Week4_Network" customModuleProvider="target" sceneMemberID="viewController">
@@ -219,14 +219,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="pt5-Vo-6vk">
-                                <rect key="frame" x="16" y="75" width="361" height="56"/>
+                                <rect key="frame" x="16" y="119" width="361" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="5Qw-b6-Z6U" id="6JY-cm-VCL"/>
                                 </connections>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W93-t5-x8X">
-                                <rect key="frame" x="0.0" y="131" width="393" height="638"/>
+                                <rect key="frame" x="0.0" y="175" width="393" height="594"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bhf-DK-daE">
                                     <size key="itemSize" width="128" height="128"/>
@@ -249,7 +249,7 @@
                             <constraint firstItem="pt5-Vo-6vk" firstAttribute="leading" secondItem="Pde-z1-xIg" secondAttribute="leading" constant="16" id="npV-OZ-doF"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="SearchBook" image="doc.text.magnifyingglass" catalog="system" id="XNU-Kq-Oo9"/>
+                    <navigationItem key="navigationItem" id="VoB-U5-i51"/>
                     <connections>
                         <outlet property="collectionView" destination="W93-t5-x8X" id="e4b-C7-3DY"/>
                         <outlet property="searchBar" destination="pt5-Vo-6vk" id="HDu-lF-WE4"/>
@@ -257,7 +257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="di1-lm-VQx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2110.6870229007632" y="617.6056338028169"/>
+            <point key="canvasLocation" x="2111" y="1418"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dXI-Hi-0eV">
@@ -271,7 +271,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="zFV-zq-DRI" kind="relationship" relationship="viewControllers" id="lBA-n9-cfq"/>
-                        <segue destination="5Qw-b6-Z6U" kind="relationship" relationship="viewControllers" id="glO-UN-tli"/>
+                        <segue destination="a5X-4b-l2X" kind="relationship" relationship="viewControllers" id="glO-UN-tli"/>
                         <segue destination="M4F-vZ-pGy" kind="relationship" relationship="viewControllers" id="egN-X4-vM2"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="mlR-ln-dvm"/>
                     </connections>
@@ -347,6 +347,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2W-5R-y0f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-234.35114503816794" y="617.6056338028169"/>
+        </scene>
+        <!--SearchBook-->
+        <scene sceneID="dNU-vk-llr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a5X-4b-l2X" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="SearchBook" image="doc.text.magnifyingglass" catalog="system" id="XNU-Kq-Oo9"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PwS-gT-V1s">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5Qw-b6-Z6U" kind="relationship" relationship="rootViewController" id="Ym5-tM-aIl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="58U-5i-7dK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2110.6870229007632" y="617.6056338028169"/>
         </scene>
     </scenes>
     <resources>

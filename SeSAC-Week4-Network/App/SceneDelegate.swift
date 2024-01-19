@@ -16,9 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   /// 이 함수를 작성하지 않으면 스토리보드 속성 설정을 기반으로 화면이 시작됨
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     
-    UserDefaults.standard.setValue(true, forKey: "Onboarded")
     // 사용자의 첫 화면을 결정하기 위한 값
-    let onboarded: Bool = UserDefaults.standard.bool(forKey: "Onboarded")
+//    let onboarded: Bool = UserDefaults.standard.bool(forKey: "onboarded")
+    let onboarded: Bool = false
+    print(onboarded)
     
     /// 온보딩이 아니라면 온보딩 화면 띄우기
     guard onboarded else {
@@ -58,7 +59,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     // 스토리보드에서 ViewController 찾아오기
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let controller = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
+    let controller = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
     
     // 네비게이션 컨트롤러를 윈도우의 시작 컨트롤러로 설정
     window?.rootViewController = controller
