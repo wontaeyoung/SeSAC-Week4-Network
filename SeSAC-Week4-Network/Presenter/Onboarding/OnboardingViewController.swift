@@ -9,10 +9,40 @@ import UIKit
 
 final class OnboardingViewController: UIViewController {
   
+  @IBOutlet weak var localNotificationButton: UIButton!
+  @IBOutlet weak var label: UILabel!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     self.navigationItem.title = "온보딩 화면"
+    
+    label.text = "안녕하세요~"
+    
+    label.font = Constant.Font2.Title.bold
+    localNotificationButton.titleLabel?.font = Constant.Font.Bold.title
+    
+    localNotificationButton.configuration = .sesacStyle()
+  }
+  
+  private func configureButton() {
+    // iOS 15 이전
+    localNotificationButton.setTitle("버튼", for: .normal)
+    localNotificationButton.setImage(.add, for: .normal)
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    /*
+    showAlert(
+      title: "삭제",
+      message: "최근 검색어를 삭제하시겠습니까?",
+      buttonTitle: "확인"
+    ) {
+      print("최근 검색어가 삭제되었습니다.")
+    }
+     */
   }
   
   @IBAction func startButtonTapped(_ sender: UIButton) {

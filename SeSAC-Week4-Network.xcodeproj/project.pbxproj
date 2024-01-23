@@ -29,6 +29,11 @@
 		6E8085A22B57C1F2007D6CEC /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E8085A02B57C1F2007D6CEC /* BookCollectionViewCell.xib */; };
 		6E8085A52B57C421007D6CEC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6E8085A42B57C421007D6CEC /* Kingfisher */; };
 		6E9F595B2B5F5BD500A3869F /* TranslationAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F595A2B5F5BD500A3869F /* TranslationAPIManager.swift */; };
+		6E9F59602B5F7BAF00A3869F /* GmarketSansBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E9F595D2B5F7BAF00A3869F /* GmarketSansBold.otf */; };
+		6E9F59612B5F7BAF00A3869F /* GmarketSansLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E9F595E2B5F7BAF00A3869F /* GmarketSansLight.otf */; };
+		6E9F59622B5F7BAF00A3869F /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E9F595F2B5F7BAF00A3869F /* GmarketSansMedium.otf */; };
+		6E9F59642B5F7ED200A3869F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F59632B5F7ED200A3869F /* Constant.swift */; };
+		6E9F59662B5F851600A3869F /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F59652B5F851600A3869F /* UIButton+.swift */; };
 		6EF215632B5611CA0025599F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF215622B5611CA0025599F /* AppDelegate.swift */; };
 		6EF215652B5611CA0025599F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF215642B5611CA0025599F /* SceneDelegate.swift */; };
 		6EF215672B5611CA0025599F /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF215662B5611CA0025599F /* LottoViewController.swift */; };
@@ -60,6 +65,11 @@
 		6E80859F2B57C1F2007D6CEC /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		6E8085A02B57C1F2007D6CEC /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
 		6E9F595A2B5F5BD500A3869F /* TranslationAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationAPIManager.swift; sourceTree = "<group>"; };
+		6E9F595D2B5F7BAF00A3869F /* GmarketSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansBold.otf; sourceTree = "<group>"; };
+		6E9F595E2B5F7BAF00A3869F /* GmarketSansLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansLight.otf; sourceTree = "<group>"; };
+		6E9F595F2B5F7BAF00A3869F /* GmarketSansMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansMedium.otf; sourceTree = "<group>"; };
+		6E9F59632B5F7ED200A3869F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		6E9F59652B5F851600A3869F /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		6EF2155F2B5611CA0025599F /* SeSAC-Week4-Network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeSAC-Week4-Network.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF215622B5611CA0025599F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EF215642B5611CA0025599F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,15 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				6E25C1BA2B59F8A000FCC927 /* UIViewController+.swift */,
+				6E9F59652B5F851600A3869F /* UIButton+.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		6E3CBCF42B576EAA007B9FF9 /* ExceptTest */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ExceptTest;
 			sourceTree = "<group>";
 		};
 		6E8085912B57A321007D6CEC /* Papago */ = {
@@ -164,6 +168,17 @@
 			path = Book;
 			sourceTree = "<group>";
 		};
+		6E9F595C2B5F7B9F00A3869F /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				6EF2156B2B5611CC0025599F /* Assets.xcassets */,
+				6E9F595D2B5F7BAF00A3869F /* GmarketSansBold.otf */,
+				6E9F595E2B5F7BAF00A3869F /* GmarketSansLight.otf */,
+				6E9F595F2B5F7BAF00A3869F /* GmarketSansMedium.otf */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		6EF215562B5611CA0025599F = {
 			isa = PBXGroup;
 			children = (
@@ -184,9 +199,8 @@
 		6EF215612B5611CA0025599F /* SeSAC-Week4-Network */ = {
 			isa = PBXGroup;
 			children = (
-				6E3CBCF42B576EAA007B9FF9 /* ExceptTest */,
+				6E9F595C2B5F7B9F00A3869F /* Resource */,
 				6EF215792B5612470025599F /* App */,
-				6EF2156B2B5611CC0025599F /* Assets.xcassets */,
 				6EF2157A2B56124A0025599F /* Config */,
 				6EF2157B2B56124C0025599F /* Data */,
 				6EF2157C2B56124F0025599F /* Presenter */,
@@ -240,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				6E3CBC5B2B565779007B9FF9 /* APIManager.swift */,
+				6E9F59632B5F7ED200A3869F /* Constant.swift */,
 				6E25C12C2B58C14000FCC927 /* UserDefaultManager.swift */,
 				6E25C1B92B59F89500FCC927 /* Extension */,
 			);
@@ -315,8 +330,11 @@
 				6E3CBCF02B576C86007B9FF9 /* .gitignore in Resources */,
 				6EF2156F2B5611CC0025599F /* LaunchScreen.storyboard in Resources */,
 				6EF2156C2B5611CC0025599F /* Assets.xcassets in Resources */,
+				6E9F59612B5F7BAF00A3869F /* GmarketSansLight.otf in Resources */,
 				6E25C1B62B59F63A00FCC927 /* Onboarding.storyboard in Resources */,
 				6EF2156A2B5611CA0025599F /* Main.storyboard in Resources */,
+				6E9F59622B5F7BAF00A3869F /* GmarketSansMedium.otf in Resources */,
+				6E9F59602B5F7BAF00A3869F /* GmarketSansBold.otf in Resources */,
 				6E8085A22B57C1F2007D6CEC /* BookCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +358,7 @@
 				6E25C12D2B58C14000FCC927 /* UserDefaultManager.swift in Sources */,
 				6E8085A12B57C1F2007D6CEC /* BookCollectionViewCell.swift in Sources */,
 				6EF215672B5611CA0025599F /* LottoViewController.swift in Sources */,
+				6E9F59662B5F851600A3869F /* UIButton+.swift in Sources */,
 				6EF215632B5611CA0025599F /* AppDelegate.swift in Sources */,
 				6E3CBC512B562195007B9FF9 /* MarketViewController.swift in Sources */,
 				6EF215652B5611CA0025599F /* SceneDelegate.swift in Sources */,
@@ -347,6 +366,7 @@
 				6E3CBC552B562567007B9FF9 /* BoxOffice.swift in Sources */,
 				6E3CBCF62B576FF5007B9FF9 /* Papago.swift in Sources */,
 				6E3CBCF22B576D0A007B9FF9 /* APIKey.swift in Sources */,
+				6E9F59642B5F7ED200A3869F /* Constant.swift in Sources */,
 				6E3CBC5C2B565779007B9FF9 /* APIManager.swift in Sources */,
 				6E8085982B57A5B3007D6CEC /* PapagoLanguage.swift in Sources */,
 			);
