@@ -19,7 +19,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // 사용자의 첫 화면을 결정하기 위한 값
 //    let onboarded: Bool = UserDefaults.standard.bool(forKey: "onboarded")
     let onboarded: Bool = false
-    print(onboarded)
     
     /// 온보딩이 아니라면 온보딩 화면 띄우기
     guard onboarded else {
@@ -75,9 +74,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
   }
   
+  /// 앱이 Active 상태로 들어왔을 때 호출되는 것
+  /// 알림센터의 뱃지를 없애기에 적절한 사이클
   func sceneDidBecomeActive(_ scene: UIScene) {
-    // Called when the scene has moved from an inactive state to an active state.
-    // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+    /// 뱃지 갯수 조절하기
+    UIApplication.shared.applicationIconBadgeNumber -= 1
+    
+    /// 사용자에게 이미 전달되어있는 알림들을 모두 제거(ex. 카톡)
+    UNUserNotificationCenter
+      .current()
+      .removeAllDeliveredNotifications()
+    
+    /// 예약중인 알림들을 모두 제거
+    UNUserNotificationCenter
+      .current()
+      .removeAllPendingNotificationRequests()
   }
   
   func sceneWillResignActive(_ scene: UIScene) {
