@@ -61,7 +61,11 @@ final class PapagoViewController: UIViewController {
   }
   
   @objc private func translateButtonTapped(_ sender: UIButton) {
-    callRequest()
+    
+    TranslationAPIManager.shared.callRequest(text: sourceTextView.text) { result in
+      
+      self.targetLabel.text = result
+    }
   }
   
   private func addTargets() {
@@ -111,27 +115,7 @@ extension PapagoViewController {
   }
   
   private func callRequest() {
-    let parameters: Parameters = [
-      "text": sourceTextView.text!,
-      "source": sourceLang.languageCode,
-      "target": targetLang.languageCode
-    ]
     
-    let headers: HTTPHeaders = [
-      "X-Naver-Client-Id": APIKey.Naver.clientID,
-      "X-Naver-Client-Secret": APIKey.Naver.cliendSecret
-    ]
-    
-    manager.callRequest(
-      type: Papago.self,
-      requestType: .papago,
-      header: headers,
-      parameter: parameters)
-    { [weak self] papago in
-      guard let self else { return }
-      
-      targetLabel.text = papago.message.result.translatedText
-    }
   }
 }
 
